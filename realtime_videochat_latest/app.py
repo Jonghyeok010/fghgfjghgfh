@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, jsonify
 from flask_socketio import SocketIO, emit, join_room, leave_room
 import socket
@@ -55,6 +54,4 @@ def handle_candidate(data):
     emit('candidate', data, room=room, include_self=False)
 
 if __name__ == '__main__':
-    from flask_socketio import SocketIO
-    socketio = SocketIO(app)
     socketio.run(app, debug=True)
