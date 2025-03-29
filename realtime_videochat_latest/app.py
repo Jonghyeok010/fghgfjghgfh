@@ -55,4 +55,6 @@ def handle_candidate(data):
     emit('candidate', data, room=room, include_self=False)
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000)
+    from flask_socketio import SocketIO
+    socketio = SocketIO(app)
+    socketio.run(app, debug=True)
